@@ -1,0 +1,306 @@
+.flightBook {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  .animatedPlane {
+    position: absolute;
+    left: -24px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #2c7eae;
+    animation: flyPaperPlane 8s infinite ease-in-out;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @keyframes flyPaperPlane {
+    0% {
+      left: -24px;
+      transform: translateY(-50%) rotate(0deg);
+    }
+    10% {
+      left: 10%;
+      transform: translateY(-80%) rotate(-15deg);
+    }
+    20% {
+      left: 20%;
+      transform: translateY(-20%) rotate(15deg);
+    }
+    30% {
+      left: 30%;
+      transform: translateY(-50%) rotate(0deg);
+    }
+    40% {
+      left: 40%;
+      transform: translateY(-80%) rotate(-15deg);
+    }
+    50% {
+      left: 50%;
+      transform: translateY(-20%) rotate(15deg);
+    }
+    60% {
+      left: 60%;
+      transform: translateY(-50%) rotate(0deg);
+    }
+    70% {
+      left: 70%;
+      transform: translateY(-80%) rotate(-15deg);
+    }
+    80% {
+      left: 80%;
+      transform: translateY(-20%) rotate(15deg);
+    }
+    90% {
+      left: 90%;
+      transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+      left: 110%;
+      transform: translateY(-50%) rotate(0deg);
+    }
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tripTypeToggle {
+    display: flex;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    padding: 0.25rem;
+    width: fit-content;
+
+    .toggleButton {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: transparent;
+      color: #333;
+      cursor: pointer;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+
+      &.active {
+        background-color: #2c7eae;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .inputGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    position: relative; // Add this to create a positioning context
+  }
+
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .planeIcon {
+      position: absolute;
+      left: 0.75rem;
+      width: 20px;
+      height: 20px;
+      color: #2c7eae;
+    }
+
+    .calendarIcon {
+      position: absolute;
+      left: 0.75rem;
+      color: #2c7eae;
+    }
+  }
+
+  .input {
+    width: 100%; // Ensure the input takes full width of its wrapper
+    padding: 0.75rem;
+    padding-left: 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 0.9rem;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #19618b;
+    }
+  }
+  .searchButton {
+    padding: 0.75rem;
+    background-color: #2c7eae;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+
+    &:hover {
+      background-color: #19618b;
+    }
+  }
+  .datePickerContainer {
+    position: relative;
+  }
+
+  .datePickerPopper {
+    z-index: 1000;
+  }
+
+  .customCalendar {
+    font-family: Arial, sans-serif;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    background-color: #ffffff;
+
+    @media (max-width: 767px) {
+      padding: 12px;
+    }
+  }
+
+  .customHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #2c7eae;
+      font-size: 18px;
+
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+
+      &:disabled {
+        color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+
+    span {
+      font-weight: bold;
+      color: #333;
+      font-size: 16px;
+
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .customDay {
+    margin: 2px;
+    color: #333;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @media (max-width: 767px) {
+      width: 32px;
+      height: 32px;
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+
+  :global {
+    
+    .react-datepicker {
+      border: none;
+      font-family: inherit;
+    }
+
+    .react-datepicker__header {
+      background-color: #ffffff;
+      border-bottom: none;
+    }
+
+    .react-datepicker__day-name {
+      color: #888;
+      width: 36px;
+      margin: 2px;
+    }
+
+    .react-datepicker__day--selected {
+      background-color: #2c7eae;
+      color: white;
+    }
+
+    .react-datepicker__day--keyboard-selected {
+      background-color: rgba(44, 126, 174, 0.2);
+      color: #2c7eae;
+    }
+
+    .react-datepicker__day--outside-month {
+      color: #ccc;
+    }
+
+    .react-datepicker__day--disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .react-datepicker__triangle {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      .react-datepicker__day-name, .react-datepicker__day {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        margin: 1px;
+      }
+
+      .react-datepicker__current-month {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

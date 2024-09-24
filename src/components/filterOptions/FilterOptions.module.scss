@@ -1,0 +1,119 @@
+.filterOptions {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  .title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2c7eae;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #4a5568;
+    }
+  }
+
+  .select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.95rem;
+    color: #4a5568;
+  }
+
+  .slider {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .sliderLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #718096;
+  }
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    span {
+      margin-left: 0.5rem;
+    }
+
+    .price {
+      margin-left: auto;
+      font-weight: 500;
+      color: #2c7eae;
+    }
+
+    .disabled {
+      color: #a0aec0;
+    }
+  }
+}
+
+/* Responsive design for devices larger than 767px */
+@media (min-width: 768px) {
+  .filterOptions {
+    padding: 1.5rem; /* Increase padding for larger screens */
+    
+    .title {
+      font-size: 1.5rem; /* Larger font size */
+    }
+
+    .select {
+      font-size: 1rem; /* Adjust select font size */
+    }
+
+    .checkboxLabel {
+      font-size: 1rem; /* Larger text for checkboxes */
+    }
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+  .filterOptions {
+    width: 100%;
+    margin-bottom: 1.25rem;
+
+    .title {
+      font-size: 1rem; /* Smaller font size */
+    }
+
+    .section {
+      margin-bottom: 1.25rem; /* Reduce spacing between sections */
+    }
+
+    .select {
+      font-size: 0.9rem;
+    }
+
+    .sliderLabels {
+      font-size: 0.85rem; /* Smaller font for labels */
+    }
+
+    .checkboxLabel {
+      font-size: 0.9rem; /* Smaller checkbox text */
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.mainPage {
+  background-color: #f5f5f5;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .mainContainer {
+    flex: 1;
+    margin-right: 1rem;
+
+    .flightBook {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .imageBarContainer {
+    width: 20%;
+  }
+
+  .flightSearch {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .searchResultsContainer {
+    width: 75%;
+    align-self: flex-start;
+  }
+
+  .filterOptionsContainer {
+    width: 23%;
+  }
+
+  /* Apply changes for devices up to 1200px */
+  @media (max-width: 1200px) {
+    .searchResultsContainer {
+      width: 50%;
+    }
+
+    .filterOptionsContainer {
+      width: 48%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content {
+      flex-direction: column;
+    }
+
+    .mainContainer {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .imageBarContainer {
+      display: none;
+    }
+
+    .flightSearch {
+      flex-direction: column;
+    }
+
+    .searchResultsContainer,
+    .filterOptionsContainer {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .filterOptionsContainer {
+      display: none; // Hide filterOptions for devices <= 767px
+    }
+  }
+}

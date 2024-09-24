@@ -1,0 +1,293 @@
+.searchResultsContainer {
+  height: 800px; /* Adjust this value as needed */
+  overflow-y: auto;
+  padding-right: 15px; /* Add some padding to account for the scrollbar */
+}
+.searchResultsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.searchResultsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.searchResultsContainer::-webkit-scrollbar-thumb {
+  background: #2c7eae;
+  border-radius: 4px;
+}
+
+.searchResultsContainer::-webkit-scrollbar-thumb:hover {
+  background: #19618b;
+}
+
+.searchResult {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0; 
+    margin-right: auto; 
+}
+  
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .airportInfo {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: left; 
+  }
+  
+  .flightDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .flightDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left;
+    
+    .iconContainer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+      
+      .icon {
+        font-size: 1rem;
+        color: #dddddd;
+        margin-right: 0.5rem;
+      }
+      
+      .flightType {
+        font-size: 0.9rem;
+        color: #555;
+      }
+    }
+    
+    .time {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    .airport {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+  .flightDuration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+  
+    .airline {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+  
+    .durationContainer {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0.5rem 0;
+  
+      .durationLine {
+        flex-grow: 1;
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 0;
+      }
+  
+      .planeIcon {
+        font-size: 1rem;
+        color: #2c7eae;
+        margin: 0 0.5rem;
+      }
+    }
+  
+    .duration {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  }
+  
+  .priceContainer {
+    margin-bottom: 1rem;
+    text-align: left; 
+    .price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      span {
+        color: #2c7eae;
+      }
+    }
+    .tripType {
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 1rem;
+  
+    .detailsButton {
+      background-color: #d3ecfa;
+      color: #2c7eae;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+  
+    .bookButton {
+      background-color: #2c7eae;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .searchResult {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .flightDetails {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .buttonContainer {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  @media (max-width: 767px) {
+    .searchResult {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .infoContainer {
+        width: 80%;
+        margin-bottom: 1.25rem;
+    }
+
+    .airportInfo h3 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .flightDetails {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .flightDetail {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .iconContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flightDuration {
+        order: -1;
+        margin: 1rem 0;
+    }
+
+    .durationContainer {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+
+    .priceContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .detailsButton, .bookButton {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}
+
+.noFlightsMessage p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2c7eae; // This color matches the theme of the buttons in your design
+}
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; // Adjust as needed for your layout
+}
+
+.spinnerWrapper {
+  position: relative;
+}
+
+.spinnerPlaneIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px; // Adjust size as needed
+  color: #2c7eae; // Match the spinner color
+  animation: planeSpin 2s linear infinite;
+}
+@keyframes planeSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.noFlightsMessage p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2c7eae;
+}
