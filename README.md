@@ -36,9 +36,9 @@ To run this project locally, follow these steps:
    git clone [https://github.com/BerivanAyaz/Flight-Booking-System.git](https://github.com/BerivanAyaz/Flight-Booking-System.git)
    ```
 2. **Install Dependencies:**
-  ```bash
-  npm install
-  ```
+   ```bash
+   npm install
+   ```
 3. **Start the Backend Server & Database Connection:**
    ```bash
    npm run start-server
